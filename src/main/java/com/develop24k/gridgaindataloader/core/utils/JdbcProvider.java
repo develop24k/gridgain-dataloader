@@ -3,6 +3,7 @@ package com.develop24k.gridgaindataloader.core.utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -29,5 +30,16 @@ public class JdbcProvider {
             }
         });
     }
+
+    public void executeQuery() throws SQLException {
+        try (Statement stmt = conn.getConnection().createStatement()) {
+            try (ResultSet rs = stmt.executeQuery("SHOW TABLES FROM MRDM_LITE;")) {
+                rs.next();
+
+            }
+        }
+    }
+
+
 
 }

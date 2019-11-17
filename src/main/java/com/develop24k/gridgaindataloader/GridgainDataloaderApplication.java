@@ -1,7 +1,6 @@
 package com.develop24k.gridgaindataloader;
 
 import com.develop24k.gridgaindataloader.core.DataLoaderService;
-import com.develop24k.gridgaindataloader.core.GridGain;
 import org.apache.ignite.Ignite;
 import org.apache.ignite.Ignition;
 import org.apache.ignite.configuration.CacheConfiguration;

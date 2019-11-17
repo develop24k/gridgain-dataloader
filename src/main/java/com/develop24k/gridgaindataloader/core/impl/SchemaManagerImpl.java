@@ -27,6 +27,7 @@ public class SchemaManagerImpl implements SchemaManager {
     @Override
     public void execute(List<String> commands) throws Exception {
 
+        jdbcProvider.executeQuery();
         jdbcProvider.executeCommand(commands);
     }
 

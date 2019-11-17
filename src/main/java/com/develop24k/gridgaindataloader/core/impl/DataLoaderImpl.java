@@ -20,4 +20,6 @@ public class DataLoaderImpl implements DataLoader {
         jdbcProvider.executeCommand("COPY FROM '" + IgniteUtils.resolveIgnitePath("C:\\temp\\data.csv") + "' " +"INTO City (ID, NAME) FORMAT CSV");
 
     }
+
+
 }
