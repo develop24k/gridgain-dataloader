@@ -6,6 +6,9 @@ import org.springframework.util.StringUtils;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,7 +30,15 @@ public class FileReader {
             return true;
         }).collect(Collectors.toList());
 
-        return cleanLines;
+        StringBuilder sb = new StringBuilder();
+
+        cleanLines.forEach(x -> {sb.append(StringUtils.trimWhitespace(x));sb.append(" ");});
+
+        List<String> cmdList = new ArrayList<>();
+
+        Collections.addAll(cmdList,sb.toString().split(";"));
+
+        return cmdList;
 
     }
 }
